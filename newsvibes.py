@@ -17,7 +17,7 @@ class NewsVibes():
             self.compare(term, new=new, old=old)
 
     def compare(self, term, new, old):
-        print("Term: {term} new:{new} old:{old}".format(term=term, new=new, old=old))
+        print("Term: {term}\n\tnew:{new}\n\told:{old}".format(term=term, new=new, old=old))
         a = self.get_articles(new[0], new[1], term)
         b = self.get_articles(old[0], old[1], term)
         print("\tnew: ")
