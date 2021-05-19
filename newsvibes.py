@@ -17,12 +17,11 @@ class NewsVibes():
             self.compare(term, new=new, old=old)
 
     def compare(self, term, new, old):
-        print("Term: {term}\n\tnew:{new}\n\told:{old}".format(term=term, new=new, old=old))
+        print("Term: {term}\n\tnew:{new}\n".format(term=term, new=new))
         a = self.get_articles(new[0], new[1], term)
         b = self.get_articles(old[0], old[1], term)
-        print("\tnew: ")
         self.get_pos_neg(a)
-        print("\told: ")
+        print("\told:{old}".format(old=old))
         self.get_pos_neg(b)
     
     def get_articles(self, from_date, to_date, term='bitcoin'):
