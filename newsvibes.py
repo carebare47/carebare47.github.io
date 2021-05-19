@@ -1,17 +1,23 @@
 #!/usr/bin/python3.8
 # python3.8 -m pip install newsapi-python
 from newsapi import NewsApiClient
+from datetime import datetime, timedelta
 
 class NewsVibes():
     def __init__(self, terms):
         self.newsapi = NewsApiClient(api_key='daea6be269b844b784e7ff55ba7fa464')
         range_1 = ['2021-05-18', '2021-05-19']
         range_2 = ['2021-04-19', '2021-04-20']
+        today = datetime.today()
+        yesterday = datetime.today() - timedelta(1)
+        day_before = datetime.today() - timedelta(2)
+        new = [yesterday.strftime('%Y-%m-%d'), today.strftime('%Y-%m-%d')]
+        old = [day_before.strftime('%Y-%m-%d'), yesterday.strftime('%Y-%m-%d')]
         for term in terms:
-            self.compare(term, new=range_1, old=range_2)
+            self.compare(term, new=new, old=old)
 
     def compare(self, term, new, old):
-        print("Term: {}".format(term))
+        print("Term: {term} new:{new} old:{old}".format(term=term, new=new, old=old))
         a = self.get_articles(new[0], new[1], term)
         b = self.get_articles(old[0], old[1], term)
         print("\tnew: ")
@@ -47,3 +53,4 @@ class NewsVibes():
 
 
 n = NewsVibes(['bitcoin', 'ether', 'etherium'])
+
