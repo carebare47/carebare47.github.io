@@ -1,5 +1,5 @@
 # carebare47.github.io\n\n
-Term: bitcoin
+Term: bitcoin new:['2021-05-18', '2021-05-19'] old:['2021-05-17', '2021-05-18']
 	new: 
 status: ok
 totalResults: 1269
@@ -7,10 +7,10 @@ totalResults: 1269
 		minus: 2
 	old: 
 status: ok
-totalResults: 870
-		plus: 4
-		minus: 0
-Term: ether
+totalResults: 1041
+		plus: 3
+		minus: 2
+Term: ether new:['2021-05-18', '2021-05-19'] old:['2021-05-17', '2021-05-18']
 	new: 
 status: ok
 totalResults: 229
@@ -18,10 +18,10 @@ totalResults: 229
 		minus: 0
 	old: 
 status: ok
-totalResults: 128
+totalResults: 154
 		plus: 4
-		minus: 0
-Term: etherium
+		minus: 2
+Term: etherium new:['2021-05-18', '2021-05-19'] old:['2021-05-17', '2021-05-18']
 	new: 
 status: ok
 totalResults: 9
@@ -29,6 +29,6 @@ totalResults: 9
 		minus: 1
 	old: 
 status: ok
-totalResults: 7
-		plus: 0
+totalResults: 3
+		plus: 1
 		minus: 0
