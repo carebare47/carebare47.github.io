@@ -2,7 +2,7 @@
 Term: bitcoin
 	new: 
 status: ok
-totalResults: 1258
+totalResults: 1269
 		plus: 4
 		minus: 2
 	old: 
