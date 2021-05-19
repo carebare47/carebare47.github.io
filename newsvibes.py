@@ -6,13 +6,11 @@ from datetime import datetime, timedelta
 class NewsVibes():
     def __init__(self, terms):
         self.newsapi = NewsApiClient(api_key='daea6be269b844b784e7ff55ba7fa464')
-        range_1 = ['2021-05-18', '2021-05-19']
-        range_2 = ['2021-04-19', '2021-04-20']
         today = datetime.today()
         yesterday = datetime.today() - timedelta(1)
-        day_before = datetime.today() - timedelta(2)
+        last_week = datetime.today() - timedelta(7)
         new = [yesterday.strftime('%Y-%m-%d'), today.strftime('%Y-%m-%d')]
-        old = [day_before.strftime('%Y-%m-%d'), yesterday.strftime('%Y-%m-%d')]
+        old = [last_week.strftime('%Y-%m-%d'), yesterday.strftime('%Y-%m-%d')]
         for term in terms:
             self.compare(term, new=new, old=old)
 
