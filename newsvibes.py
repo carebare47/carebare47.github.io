@@ -31,24 +31,21 @@ class NewsVibes():
         positive=0
         negative=0
         for key, value in articles.items():
-            if 'articles' not in key:
-                    print("{a}: {b}".format(a=key, b=value))
-            else:
-                    for l in value:
-                            for i, k in l.items():
-                                    if 'description' in i:
-                                        negative = negative + k.count('fell')
-                                        negative = negative + k.count('sunk')
-                                        negative = negative + k.count('downk')
-                                        negative = negative + k.count('dropped')
-                                        negative = negative + k.count('crashing')
-                                        positive = positive + k.count('rose')
-                                        positive = positive + k.count('risen')
-                                        positive = positive + k.count('climbed')
-                                        positive = positive + k.count('up')
-                                        # print("{a}: {b}".format(a=i, b=k))
+                for l in value:
+                        for i, k in l.items():
+                                if 'description' in i:
+                                    negative = negative + k.count('fell')
+                                    negative = negative + k.count('sunk')
+                                    negative = negative + k.count('downk')
+                                    negative = negative + k.count('dropped')
+                                    negative = negative + k.count('crashing')
+                                    positive = positive + k.count('rose')
+                                    positive = positive + k.count('risen')
+                                    positive = positive + k.count('climbed')
+                                    positive = positive + k.count('up')
+                                    # print("{a}: {b}".format(a=i, b=k))
     
-        print("\t\tplus: {a}\n\t\tminus: {b}\n".format(a=positive, b=negative))
+    print("\t\tplus: {a}\n\t\tminus: {b}\n ".format(a=positive, b=negative))
 
 
 n = NewsVibes(['bitcoin', 'ether', 'etherium'])
