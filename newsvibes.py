@@ -17,7 +17,7 @@ class NewsVibes():
             self.compare(term, new=new, old=old)
 
     def compare(self, term, new, old):
-        print("Term: {term}\n\tnew: {new}\n".format(term=term, new=new))
+        print("Term: {term}\n\tnew: {new} ".format(term=term, new=new))
         a = self.get_articles(new[0], new[1], term)
         b = self.get_articles(old[0], old[1], term)
         self.get_pos_neg(a)
@@ -31,19 +31,20 @@ class NewsVibes():
         positive=0
         negative=0
         for key, value in articles.items():
-                for l in value:
-                        for i, k in l.items():
-                                if 'description' in i:
-                                    negative = negative + k.count('fell')
-                                    negative = negative + k.count('sunk')
-                                    negative = negative + k.count('downk')
-                                    negative = negative + k.count('dropped')
-                                    negative = negative + k.count('crashing')
-                                    positive = positive + k.count('rose')
-                                    positive = positive + k.count('risen')
-                                    positive = positive + k.count('climbed')
-                                    positive = positive + k.count('up')
-                                    # print("{a}: {b}".format(a=i, b=k))
+            if 'articles' in key:
+                    for l in value:
+                            for i, k in l.items():
+                                    if 'description' in i:
+                                        negative = negative + k.count('fell')
+                                        negative = negative + k.count('sunk')
+                                        negative = negative + k.count('downk')
+                                        negative = negative + k.count('dropped')
+                                        negative = negative + k.count('crashing')
+                                        positive = positive + k.count('rose')
+                                        positive = positive + k.count('risen')
+                                        positive = positive + k.count('climbed')
+                                        positive = positive + k.count('up')
+                                        # print("{a}: {b}".format(a=i, b=k))
     
         print("\t\tplus: {a}\n\t\tminus: {b}\n ".format(a=positive, b=negative))
 
