@@ -48,7 +48,7 @@ class NewsVibes():
                                         positive = positive + k.count('up')
                                         # print("{a}: {b}".format(a=i, b=k))
     
-        print("\t\tplus: {a}\n\t\tminus: {b}".format(a=positive, b=negative))
+        print("\t\tplus: {a}\n\t\tminus: {b}\n".format(a=positive, b=negative))
 
 
 n = NewsVibes(['bitcoin', 'ether', 'etherium'])
